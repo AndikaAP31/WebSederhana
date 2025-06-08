@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <title>Biodata Diri</title>
@@ -10,120 +11,198 @@
       padding: 0;
       background: #f0f0f0;
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
+
+    /* Menu */
     .menu {
       background-color: #fff;
       padding: 10px;
       border-bottom: 1px solid #ccc;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      justify-items: end;
     }
+
+    .menu span:first-child {
+      justify-self: start;
+    }
+
+    .menu span:last-child {
+      justify-self: end;
+    }
+
     .menu td {
       padding: 10px;
     }
+
+    /* Header */
     .header {
-      background-color: #fff;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       padding: 20px;
+      background-color: #fff;
     }
-    .header td {
-      vertical-align: top;
-      padding: 10px;
+
+    .header img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
     }
+
     .header h3 {
       margin-top: 0;
+      color: #007BFF;
     }
+
+    .header a {
+      color: #007BFF;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Section Title */
     .section-title {
       text-align: center;
-      padding: 20px 0 10px;
+      padding: 20px 0;
       background-color: #fff;
     }
-    .biodata td {
+
+    /* Biodata */
+    .biodata {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
       text-align: center;
-      border: 1px solid #ccc;
-      padding: 15px;
+      padding: 20px;
+      background-color: #fff;
+    }
+
+    .biodata div {
       background-color: #f9f9f9;
-    }
-    .portfolio td {
-      text-align: center;
       padding: 15px;
-      background-color: #fff;
+      border-radius: 8px;
     }
+
+    /* Portfolio */
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+      background-color: #fff;
+      justify-content: center;
+    }
+
     .portfolio img {
       display: block;
-      margin: 0 auto 10px;
+      width: 280px;
+      height: 320px;
+      border-radius: 8px;
+      margin: auto;
+    }
+
+    .portfolio div {
+      text-align: center;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+      .header {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .biodata {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .portfolio {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .biodata {
+        grid-template-columns: 1fr;
+      }
+
+      .portfolio {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<!-- Section 1: Menu -->
-<table class="menu">
-  <tr>
-    <td>Brand</td>
-    <td align="right">Header | Biodata | Portofolio</td>
-  </tr>
-</table>
+  <!-- Section 1: Menu -->
+  <div class="menu">
+    <span>Brand</span>
+    <span>Header | Biodata | Portofolio</span>
+  </div>
 
-<!-- Section 2: Judul di kiri dan gambar di kanan -->
-<table class="header">
-  <tr>
-    <td width="50%">
+  <!-- Section 2: Judul di kiri dan gambar di kanan -->
+  <div class="header">
+    <div>
       <h3>Selamat Datang di Website Saya</h3>
-      <p>Contoh dari website prtofolio saya, Andika Arsana</p>
+      <p>Contoh dari website portofolio saya, Andika Arsana</p>
       <a href="#">Pelajari Lebih Lanjut</a>
-    </td>
-    <td width="50%" align="center">
+    </div>
+    <div>
       <img src="foto/images.jpeg" alt="Gambar Header">
-    </td>
-  </tr>
-</table>
+    </div>
+  </div>
 
-<hr>
+  <hr>
 
-<!-- Section 3: Biodata -->
-<div class="section-title">
-  <h2 >About Me</h2>
-  <p>A brief introduction about myself</p>
-</div>
-<table class="biodata">
-  <tr>
-    <td>Andika Arsana</td>
-    <td>Informatika</td>
-    <td>Mahasiswa</td>
-  </tr>
-  <tr>
-    <td>081xxxxxxx</td>
-    <td>Futsal</td>
-    <td>Bali</td>
-  </tr>
-</table>
+  <!-- Section 3: Biodata -->
+  <div class="section-title">
+    <h2>About Me</h2>
+    <p>A brief introduction about myself</p>
+  </div>
 
-<hr>
+  <div class="biodata">
+    <div>
+      <strong>Nama</strong><br>Andika Arsana
+    </div>
+    <div>
+      <strong>Jurusan</strong><br>Informatika
+    </div>
+    <div>
+      <strong>Pekerjaan</strong><br>Mahasiswa
+    </div>
+    <div>
+      <strong>Kontak</strong><br>081xxxxxxx
+    </div>
+    <div>
+      <strong>Hobi</strong><br>Futsal
+    </div>
+    <div>
+      <strong>Asal</strong><br>Bali
+    </div>
+  </div>
 
-<!-- Section 4: Portofolio -->
-<div class="section-title">
-  <h2>Portofolio</h2>
-</div>
-<table class="portfolio">
-  <tr>
-    <td>
-      <img src="foto/deteksi_kendaraan.png" alt="Proyek 1" width="280" height="320">
-      <strong>Proyek 1</strong><br>
-      Klasifikasi kendaraan dengan SVM
-    </td>
-    <td>
-      <img src="foto/antrian_puskesmas.png" alt="Proyek 2" width="280" height="320">
-      <strong>Proyek 2</strong><br>
-      sistem antrian puskesmas
-    </td>
-    <td>
-      <img src="foto/parsing.png" alt="Proyek 3" width="280" height="320">
-      <strong>Proyek 3</strong><br>
-      Parsing kalimat bahasa bali
-    </td>
-  </tr>
-</table>
+  <hr>
+
+  <!-- Section 4: Portofolio -->
+  <div class="section-title">
+    <h2>Portofolio</h2>
+  </div>
+
+  <div class="portfolio">
+    <div>
+      <img src="foto/deteksi_kendaraan.png" alt="Proyek 1">
+      <strong>Proyek 1</strong><br>Klasifikasi kendaraan dengan SVM
+    </div>
+    <div>
+      <img src="foto/antrian_puskesmas.png" alt="Proyek 2">
+      <strong>Proyek 2</strong><br>Sistem antrian puskesmas
+    </div>
+    <div>
+      <img src="foto/parsing.png" alt="Proyek 3">
+      <strong>Proyek 3</strong><br>Parsing kalimat bahasa bali
+    </div>
+  </div>
 
 </body>
+
 </html>
